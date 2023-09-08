@@ -11,28 +11,53 @@ namespace ConsoleApp9
         static void Main(string[] args)
         {
 
-            string uid = "manasa";
-            string pwd = "123456";
+            Console.WriteLine("Enter product details: ");
+            int id = Convert.ToInt32(Console.ReadLine());
 
+            Console.WriteLine("Enter product name: ");
+            string name = Console.ReadLine();
 
-            Console.WriteLine("Enter username: ");
-            string uid1 = Console.ReadLine();
+            Console.WriteLine("Enter product price: ");
+            int price = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Enter password: ");
-            string pwd1 = Console.ReadLine();
+            Console.WriteLine("Enter quantity: ");
+            int quant = Convert.ToInt32(Console.ReadLine());
 
+            int total = price * quant;
 
-            if (uid1 == uid && pwd1 == pwd)
+            int discount = 0;
+
+            if (quant < 10)
             {
-                Console.WriteLine("Welcome to Admin");
+                discount = 0;
+            }
+            else if (quant > 10)
+            {
+                discount = total / 10;
+            }
+            else if (quant > 30 && quant < 50)
+            {
+                discount = total / 5;
             }
             else
             {
-                Console.WriteLine("Invalid User Id or Password");
+                discount = total / 2;
             }
 
+            int final = total - discount;
+
+            Console.WriteLine("------------------------------");
+            Console.WriteLine("Product ID: " + id);
+            Console.WriteLine("Product Name: " + name);
+            Console.WriteLine("Unit Price: " + price);
+            Console.WriteLine("Quantity: " + quant);
+            Console.WriteLine("Total Amount: " + total);
+            Console.WriteLine("Discount Amount: " + discount);
+            Console.WriteLine("Final Amount: " + final);
+
+
             Console.ReadLine();
+
         }
     }
 }
-
