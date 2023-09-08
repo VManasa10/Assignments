@@ -1,0 +1,22 @@
+1. System.Object class :
+   
+   - It is the base class for all the classes in .NET Framework
+   - It resides in the "System" namespace
+   - Each class of C# is derived from Object class
+   - The main purpose is to provide some functions to the child classes
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+4.
+            string pwd = "";
+            do
+            {
+                key = Console.ReadKey(true);
+                if (keey.Key != ConsoleKey.Enter)
+                {
+                    strPassword += key.KeyChar;
+                    Console.Write("*");
+                }
+            }
+            while (key.Key != ConsoleKey.Enter);
